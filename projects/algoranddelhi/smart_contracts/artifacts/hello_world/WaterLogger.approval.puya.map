@@ -1,0 +1,494 @@
+{
+  "version": 3,
+  "sources": [
+    "C:/Users/Adarsh/algoranddelhi/projects/algoranddelhi/smart_contracts/hello_world/contract.algo.ts"
+  ],
+  "mappings": ";;;;;;;;;;;;;;;;;;;;;;;;AAI2C;AAA6B;AAAtE;AAFF;;AAAA;;;AAAA;;;;;;;;;;;;AAAA;;;AAAA;;;;;;AAAA;;AAcE;;AAAA;AAAA;AAAA;;AAAA;AAAA;;;AAAA;;AATA;;AAAA;AAAA;AAAA;;AAAA;AALF;;;AAAA;AAKE;;;AAAA;AAAA;;;;;;AAAA;AAAA;AAAA;AAAA;;AALF;;AAAA;;;AAAA;;AAAA;AAAA;AAAA;;AAKE;;;AAHyC;AAAA;AAAA;AAAA;AAKd;;AAAA;AALc;AAKvC;AAAA;AALuC;AAAA;AAAA;AAAA;AAQvC;AARuC;AAad;AAAzB;",
+  "op_pc_offset": 0,
+  "pc_events": {
+    "1": {
+      "subroutine": "@algorandfoundation/algorand-typescript/arc4/index.d.ts::Contract.approvalProgram",
+      "params": {},
+      "block": "main",
+      "stack_in": [],
+      "op": "intcblock 0 1"
+    },
+    "5": {
+      "op": "bytecblock \"totalIntake\""
+    },
+    "19": {
+      "op": "txn ApplicationID",
+      "defined_out": [
+        "reinterpret_bool%0#0"
+      ],
+      "stack_out": [
+        "reinterpret_bool%0#0"
+      ]
+    },
+    "21": {
+      "op": "bnz main_after_if_else@2",
+      "stack_out": []
+    },
+    "24": {
+      "op": "bytec_0 // \"totalIntake\"",
+      "defined_out": [
+        "\"totalIntake\""
+      ],
+      "stack_out": [
+        "\"totalIntake\""
+      ]
+    },
+    "25": {
+      "op": "intc_0 // 0",
+      "defined_out": [
+        "\"totalIntake\"",
+        "0"
+      ],
+      "stack_out": [
+        "\"totalIntake\"",
+        "0"
+      ]
+    },
+    "26": {
+      "op": "app_global_put",
+      "stack_out": []
+    },
+    "27": {
+      "block": "main_after_if_else@2",
+      "stack_in": [],
+      "op": "txn NumAppArgs",
+      "defined_out": [
+        "tmp%0#1"
+      ],
+      "stack_out": [
+        "tmp%0#1"
+      ]
+    },
+    "29": {
+      "op": "bz main_bare_routing@9",
+      "stack_out": []
+    },
+    "32": {
+      "op": "pushbytess 0x56d14903 0xc8fb5ba1 // method \"logIntake(uint64)uint64\", method \"resetIntake()void\"",
+      "defined_out": [
+        "Method(logIntake(uint64)uint64)",
+        "Method(resetIntake()void)"
+      ],
+      "stack_out": [
+        "Method(logIntake(uint64)uint64)",
+        "Method(resetIntake()void)"
+      ]
+    },
+    "44": {
+      "op": "txna ApplicationArgs 0",
+      "defined_out": [
+        "Method(logIntake(uint64)uint64)",
+        "Method(resetIntake()void)",
+        "tmp%2#0"
+      ],
+      "stack_out": [
+        "Method(logIntake(uint64)uint64)",
+        "Method(resetIntake()void)",
+        "tmp%2#0"
+      ]
+    },
+    "47": {
+      "op": "match main_logIntake_route@5 main_resetIntake_route@6",
+      "stack_out": []
+    },
+    "53": {
+      "block": "main_after_if_else@13",
+      "stack_in": [],
+      "op": "intc_0 // 0",
+      "defined_out": [
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0"
+      ]
+    },
+    "54": {
+      "op": "return",
+      "stack_out": []
+    },
+    "55": {
+      "block": "main_resetIntake_route@6",
+      "stack_in": [],
+      "op": "txn OnCompletion",
+      "defined_out": [
+        "tmp%9#0"
+      ],
+      "stack_out": [
+        "tmp%9#0"
+      ]
+    },
+    "57": {
+      "op": "!",
+      "defined_out": [
+        "tmp%10#0"
+      ],
+      "stack_out": [
+        "tmp%10#0"
+      ]
+    },
+    "58": {
+      "error": "OnCompletion is not NoOp",
+      "op": "assert // OnCompletion is not NoOp",
+      "stack_out": []
+    },
+    "59": {
+      "op": "txn ApplicationID",
+      "defined_out": [
+        "tmp%11#0"
+      ],
+      "stack_out": [
+        "tmp%11#0"
+      ]
+    },
+    "61": {
+      "error": "can only call when not creating",
+      "op": "assert // can only call when not creating",
+      "stack_out": []
+    },
+    "62": {
+      "callsub": "smart_contracts/hello_world/contract.algo.ts::WaterLogger.resetIntake",
+      "op": "callsub resetIntake"
+    },
+    "65": {
+      "op": "intc_1 // 1",
+      "defined_out": [
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0"
+      ]
+    },
+    "66": {
+      "op": "return",
+      "stack_out": []
+    },
+    "67": {
+      "block": "main_logIntake_route@5",
+      "stack_in": [],
+      "op": "txn OnCompletion",
+      "defined_out": [
+        "tmp%3#0"
+      ],
+      "stack_out": [
+        "tmp%3#0"
+      ]
+    },
+    "69": {
+      "op": "!",
+      "defined_out": [
+        "tmp%4#0"
+      ],
+      "stack_out": [
+        "tmp%4#0"
+      ]
+    },
+    "70": {
+      "error": "OnCompletion is not NoOp",
+      "op": "assert // OnCompletion is not NoOp",
+      "stack_out": []
+    },
+    "71": {
+      "op": "txn ApplicationID",
+      "defined_out": [
+        "tmp%5#0"
+      ],
+      "stack_out": [
+        "tmp%5#0"
+      ]
+    },
+    "73": {
+      "error": "can only call when not creating",
+      "op": "assert // can only call when not creating",
+      "stack_out": []
+    },
+    "74": {
+      "op": "txna ApplicationArgs 1",
+      "defined_out": [
+        "reinterpret_bytes[8]%0#0"
+      ],
+      "stack_out": [
+        "reinterpret_bytes[8]%0#0"
+      ]
+    },
+    "77": {
+      "op": "btoi",
+      "defined_out": [
+        "tmp%7#0"
+      ],
+      "stack_out": [
+        "tmp%7#0"
+      ]
+    },
+    "78": {
+      "callsub": "smart_contracts/hello_world/contract.algo.ts::WaterLogger.logIntake",
+      "op": "callsub logIntake",
+      "defined_out": [
+        "to_encode%0#0"
+      ],
+      "stack_out": [
+        "to_encode%0#0"
+      ]
+    },
+    "81": {
+      "op": "itob",
+      "defined_out": [
+        "val_as_bytes%0#0"
+      ],
+      "stack_out": [
+        "val_as_bytes%0#0"
+      ]
+    },
+    "82": {
+      "op": "pushbytes 0x151f7c75",
+      "defined_out": [
+        "0x151f7c75",
+        "val_as_bytes%0#0"
+      ],
+      "stack_out": [
+        "val_as_bytes%0#0",
+        "0x151f7c75"
+      ]
+    },
+    "88": {
+      "op": "swap",
+      "stack_out": [
+        "0x151f7c75",
+        "val_as_bytes%0#0"
+      ]
+    },
+    "89": {
+      "op": "concat",
+      "defined_out": [
+        "tmp%8#0"
+      ],
+      "stack_out": [
+        "tmp%8#0"
+      ]
+    },
+    "90": {
+      "op": "log",
+      "stack_out": []
+    },
+    "91": {
+      "op": "intc_1 // 1",
+      "defined_out": [
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0"
+      ]
+    },
+    "92": {
+      "op": "return",
+      "stack_out": []
+    },
+    "93": {
+      "block": "main_bare_routing@9",
+      "stack_in": [],
+      "op": "txn OnCompletion",
+      "defined_out": [
+        "tmp%13#0"
+      ],
+      "stack_out": [
+        "tmp%13#0"
+      ]
+    },
+    "95": {
+      "op": "bnz main_after_if_else@13",
+      "stack_out": []
+    },
+    "98": {
+      "op": "txn ApplicationID",
+      "defined_out": [
+        "tmp%14#0"
+      ],
+      "stack_out": [
+        "tmp%14#0"
+      ]
+    },
+    "100": {
+      "op": "!",
+      "defined_out": [
+        "tmp%15#0"
+      ],
+      "stack_out": [
+        "tmp%15#0"
+      ]
+    },
+    "101": {
+      "error": "can only call when creating",
+      "op": "assert // can only call when creating",
+      "stack_out": []
+    },
+    "102": {
+      "op": "intc_1 // 1",
+      "defined_out": [
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0"
+      ]
+    },
+    "103": {
+      "op": "return",
+      "stack_out": []
+    },
+    "104": {
+      "subroutine": "smart_contracts/hello_world/contract.algo.ts::WaterLogger.logIntake",
+      "params": {
+        "amount#0": "uint64"
+      },
+      "block": "logIntake",
+      "stack_in": [],
+      "op": "proto 1 1"
+    },
+    "107": {
+      "op": "intc_0 // 0",
+      "defined_out": [
+        "0"
+      ],
+      "stack_out": [
+        "0"
+      ]
+    },
+    "108": {
+      "op": "bytec_0 // \"totalIntake\"",
+      "defined_out": [
+        "\"totalIntake\"",
+        "0"
+      ],
+      "stack_out": [
+        "0",
+        "\"totalIntake\""
+      ]
+    },
+    "109": {
+      "op": "app_global_get_ex",
+      "defined_out": [
+        "maybe_exists%0#0",
+        "maybe_value%0#0"
+      ],
+      "stack_out": [
+        "maybe_value%0#0",
+        "maybe_exists%0#0"
+      ]
+    },
+    "110": {
+      "error": "check GlobalState exists",
+      "op": "assert // check GlobalState exists",
+      "stack_out": [
+        "maybe_value%0#0"
+      ]
+    },
+    "111": {
+      "op": "frame_dig -1",
+      "defined_out": [
+        "amount#0 (copy)",
+        "maybe_value%0#0"
+      ],
+      "stack_out": [
+        "maybe_value%0#0",
+        "amount#0 (copy)"
+      ]
+    },
+    "113": {
+      "op": "+",
+      "defined_out": [
+        "new_state_value%0#0"
+      ],
+      "stack_out": [
+        "new_state_value%0#0"
+      ]
+    },
+    "114": {
+      "op": "bytec_0 // \"totalIntake\"",
+      "stack_out": [
+        "new_state_value%0#0",
+        "\"totalIntake\""
+      ]
+    },
+    "115": {
+      "op": "swap",
+      "stack_out": [
+        "\"totalIntake\"",
+        "new_state_value%0#0"
+      ]
+    },
+    "116": {
+      "op": "app_global_put",
+      "stack_out": []
+    },
+    "117": {
+      "op": "intc_0 // 0",
+      "stack_out": [
+        "0"
+      ]
+    },
+    "118": {
+      "op": "bytec_0 // \"totalIntake\"",
+      "stack_out": [
+        "0",
+        "\"totalIntake\""
+      ]
+    },
+    "119": {
+      "op": "app_global_get_ex",
+      "defined_out": [
+        "maybe_exists%1#0",
+        "maybe_value%1#0"
+      ],
+      "stack_out": [
+        "maybe_value%1#0",
+        "maybe_exists%1#0"
+      ]
+    },
+    "120": {
+      "error": "check GlobalState exists",
+      "op": "assert // check GlobalState exists",
+      "stack_out": [
+        "maybe_value%1#0"
+      ]
+    },
+    "121": {
+      "retsub": true,
+      "op": "retsub"
+    },
+    "122": {
+      "subroutine": "smart_contracts/hello_world/contract.algo.ts::WaterLogger.resetIntake",
+      "params": {},
+      "block": "resetIntake",
+      "stack_in": [],
+      "op": "bytec_0 // \"totalIntake\"",
+      "defined_out": [
+        "\"totalIntake\""
+      ],
+      "stack_out": [
+        "\"totalIntake\""
+      ]
+    },
+    "123": {
+      "op": "intc_0 // 0",
+      "defined_out": [
+        "\"totalIntake\"",
+        "0"
+      ],
+      "stack_out": [
+        "\"totalIntake\"",
+        "0"
+      ]
+    },
+    "124": {
+      "op": "app_global_put",
+      "stack_out": []
+    },
+    "125": {
+      "retsub": true,
+      "op": "retsub"
+    }
+  }
+}
