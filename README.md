@@ -1,22 +1,84 @@
-# algoranddelhi
 
-Welcome to your new AlgoKit project!
+# 💧 WaterLogger dApp
 
-This is your workspace root. A `workspace` in AlgoKit is an orchestrated collection of standalone projects (backends, smart contracts, frontend apps and etc).
+A simple and beginner-friendly decentralized application (dApp) built on the **Algorand blockchain** that helps users **track their daily water intake** securely and transparently.
 
-By default, `projects_root_path` parameter is set to `projects`. Which instructs AlgoKit CLI to create a new directory under `projects` directory when new project is instantiated via `algokit init` at the root of the workspace.
+This project demonstrates how to use **Algorand smart contracts in TypeScript** to manage and persist data on-chain.
+<img width="1918" height="1073" alt="image" src="https://github.com/user-attachments/assets/a612bd46-cb53-4832-a353-e6915824878c" />
 
-## Getting Started
+---
 
-To get started refer to `README.md` files in respective sub-projects in the `projects` directory.
+## 📖 Project Description
 
-To learn more about algokit, visit [documentation](https://github.com/algorandfoundation/algokit-cli/blob/main/docs/algokit.md).
+Staying hydrated is essential for a healthy lifestyle, and WaterLogger makes it easy to log and track your water intake in a decentralized way. Instead of relying on centralized apps that may lose or misuse your data, WaterLogger ensures your records are stored on Algorand’s secure, scalable, and eco-friendly blockchain.
 
-### GitHub Codespaces
+With just a few lines of code, this dApp shows how to:
 
-To get started execute:
+* Define **global state variables**.
+* Create **functions to update and reset state**.
+* Return updated values to users.
 
-1. `algokit generate devcontainer` - invoking this command from the root of this repository will create a `devcontainer.json` file with all the configuration needed to run this project in a GitHub codespace. [Run the repository inside a codespace](https://docs.github.com/en/codespaces/getting-started/quickstart) to get started.
-2. `algokit init` - invoke this command inside a github codespace to launch an interactive wizard to guide you through the process of creating a new AlgoKit project
+---
 
-Powered by [Copier templates](https://copier.readthedocs.io/en/stable/).
+## ⚡ What it does
+
+* Records the amount of water (in milliliters) you drink.
+* Stores the **total intake** on the blockchain in global state.
+* Lets you **reset your water intake** at any time.
+* Provides instant feedback by returning the updated total.
+
+---
+
+## ✨ Features
+
+* 🔹 **Blockchain-backed** → Built on Algorand for trust, security, and immutability.
+* 🔹 **Beginner-friendly code** → Easy-to-understand smart contract written in TypeScript.
+* 🔹 **Simple functionality** → Only core functions: `logIntake` and `resetIntake`.
+* 🔹 **Extensible** → Can be enhanced with user-specific tracking, goals, or rewards.
+
+---
+
+## 🔗 Deployed Smart Contract
+
+https://lora.algokit.io/testnet/application/745557453
+
+*(Replace `XXX` with your deployed smart contract link once available)*
+
+---
+
+## 🧑‍💻 Code
+
+```ts
+import { Contract, GlobalState, uint64 } from '@algorandfoundation/algorand-typescript'
+
+export class WaterLogger extends Contract {
+  // Store total water intake (in ml) as global state
+  totalIntake = GlobalState<uint64>({ key: "totalIntake", initialValue: 0 })
+
+  // Function to log water intake
+  logIntake(amount: uint64): uint64 {
+    // Increase total intake
+    this.totalIntake.value = this.totalIntake.value + amount
+
+    // Return updated total
+    return this.totalIntake.value
+  }
+
+  // Function to reset intake (optional)
+  resetIntake(): void {
+    this.totalIntake.value = 0
+  }
+}
+```
+
+---
+
+## 🚀 Next Steps
+
+* Add user accounts so each person can log their **own intake history**.
+* Build a simple **frontend interface** for interaction.
+* Introduce **hydration goals** and on-chain rewards.
+
+---
+
+
